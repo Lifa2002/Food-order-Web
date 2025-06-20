@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Foodie's Haven</h1>
+    <nav>
+        <a href="javascript:void(0)" onclick="showMenu()">Menu</a>
+        <a href="javascript:void(0)" onclick="showOrderHistory()">Order History</a>
+        <a href="javascript:void(0)" onclick="showLogin()">Login</a>
+    </nav>
+</header>
+
+<!-- Login Section -->
+<section id="login-section">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p id="login-error" style="color: red; display: none;">Invalid login credentials</p>
+    </form>
+    <p>Don't have an account? <a href="javascript:void(0);" onclick="showSignUp()">Sign Up</a></p>
+</section>
+
+<!-- Sign Up Section -->
+<section id="signup-section">
+    <h2>Create an Account</h2>
+    <form id="signup-form">
+        <input type="text" id="new-username" placeholder="Username" required>
+        <input type="password" id="new-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="javascript:void(0);" onclick="showLogin()">Login</a></p>
+</section>
+
+<!-- Menu Section -->
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-item">
+        <img src="burgur.jpeg" alt="Burger">
+        <h3>Classic Burger</h3>
+        <p>R85.00</p>
+        <button onclick="addToCart('Classic Burger', 85)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <img src="pizza.jpeg" alt="Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>R120.00</p>
+        <button onclick="addToCart('Margherita Pizza', 120)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <img src="sushi.jpg" alt="Sushi">
+        <h3>Sushi Roll</h3>
+        <p>R150.00</p>
+        <button onclick="addToCart('Sushi Roll', 150)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <img src="coke.jpeg" alt="Coke">
+        <h3>Coca-Cola</h3>
+        <p>R30.00</p>
+        <button onclick="addToCart('Coca-Cola', 30)">Add to Cart</button>
+    </div>
+    <!-- Additional Food Items -->
+    <div class="menu-item">
+        <img src="pasta.jpg" alt="Pasta">
+        <h3>Spaghetti Carbonara</h3>
+        <p>R95.00</p>
+        <button onclick="addToCart('Spaghetti Carbonara', 95)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <img src="salad.jpeg" alt="Salad">
+        <h3>Caesar Salad</h3>
+        <p>R60.00</p>
+        <button onclick="addToCart('Caesar Salad', 60)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <img src="smoothie.jpg" alt="Smoothie">
+        <h3>Berry Smoothie</h3>
+        <p>R45.00</p>
+        <button onclick="addToCart('Berry Smoothie', 45)">Add to Cart</button>
+    </div>
+</section>
+
+<!-- Cart Section -->
+<section id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+    <div id="cart-total">
+        <h3>Total: R0.00</h3>
+        <button onclick="checkout()">Proceed to Checkout</button>
+    </div>
+</section>
+
+<!-- Payment Section -->
+<section id="payment-section">
+    <h2>Payment</h2>
+    <p>Total: <span id="total-price">R0.00</span></p>
+    <form id="payment-form">
+        <input type="text" id="card-number" placeholder="Card Number" required>
+        <input type="text" id="card-expiry" placeholder="MM/YY" required>
+        <input type="text" id="card-cvc" placeholder="CVC" required>
+        <button type="submit">Pay</button>
+    </form>
+</section>
+
+<!-- Order History Section -->
+<section id="order-history">
+    <h2>Your Order History</h2>
+    <div id="orders-list">
+        <p>No orders yet.</p>
+    </div>
+</section>
+
+<footer>
+    <h3>Contact Us</h3>
+    <p>Email: contact@foodieshaven.co.za</p>
+    <p>Phone: +27 123 456 789</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
